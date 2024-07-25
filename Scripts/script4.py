@@ -11,45 +11,33 @@ options.add_argument(f"user-agent={user_agent}")
 
 def remove_duplicate_files(download_dir):
     for file_name in os.listdir(download_dir):
-        #print(file_name)
         if file_name.endswith(" (1).otf"):
             file_path = os.path.join(download_dir, file_name)
             os.remove(file_path)
-            #print(f"Fichier supprimé : {file_path}")
 
-#\fonts22"
-def fonts(dir_path):            # chemin ou on va creer le repertoire fonts pour enregistrer les fonts qui existent
+
+def fonts(dir_path):
     dir_path=dir_path+"/https/rh.com/fonts"
-    #print(dir_path)
     if not os.path.exists(dir_path):
-        os.makedirs(dir_path)  #cree le rep s'il n'existe pas 
+        os.makedirs(dir_path)
     options.add_experimental_option("prefs", {
-    "download.default_directory": os.path.normpath(dir_path),  # repertoire de telechargement par defaut
-    "download.prompt_for_download": False  # Ne pas demander où enregistrer les fichiers
+    "download.default_directory": os.path.normpath(dir_path),
+    "download.prompt_for_download": False
     })
-
     driver = webdriver.Chrome(service=s,options=options)
-
     driver.get("https://rh.com/us/en/")
-    
-    # Attendre que le logo du site soit visible
     time.sleep(10)
     elements = driver.find_elements(By.CSS_SELECTOR, "link[rel='preload']")
-    # Filtrer les éléments pour ne garder que ceux avec as="font"
     font_elements = [element for element in elements if element.get_attribute("as") == "font"]
     
     for element in font_elements:
-        #html_element=element.get_attribute("outerHTML")
         href = element.get_attribute("href")
         driver.get(href)
-        #extraire le nom du font depuis href
         segments = href.split("/")
-        font_name=segments[-1]   # le nom du fichier a enregistrer = nom du font
-        
+        font_name=segments[-1]
         file_path=dir_path+"/"+font_name
         driver.get(href)
         time.sleep(1)
-
-    remove_duplicate_files(dir_path) # suppriemer les doublons
+    remove_duplicate_files(dir_path)
     driver.quit()
 
