@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent body from scrolling */
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2F4F41;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto; /* Allow content to scroll */
+    margin-left: 250px; /* Offset to account for fixed sidebar */
+    padding: 20px;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

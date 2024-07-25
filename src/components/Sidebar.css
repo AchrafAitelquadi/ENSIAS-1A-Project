@@ -1,0 +1,83 @@
+/* Sidebar.css */
+.sidebar {
+    width: 15vw; /* Use relative unit for width */
+    background-color: #2F4F41; /* Green color */
+    color: white;
+    height: 100vh; /* Full height of the viewport */
+    padding-top: 2rem; /* Use relative unit for padding */
+    position: fixed; /* Keep the sidebar fixed in place */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between for content and footer */
+    overflow-y: auto; /* Make sidebar content scrollable if needed */
+    z-index: 1000; /* Ensure sidebar stays above other content */
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem; /* Use relative unit for margin */
+}
+
+.logo img {
+    max-width: 80%;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1; /* Allow the menu to grow and take available space */
+}
+
+.menu ul {
+    padding: 0;
+}
+
+.menu li {
+    margin: 1.25rem 0; /* Use relative unit for margin */
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    padding: 0.625rem 2.5rem; /* Use relative unit for padding */
+    display: flex;
+    align-items: center;
+    border-radius: 25px 0 0 25px;
+    font-size: 1rem; /* Use relative unit for font size */
+    position: relative;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+.menu-item:hover .menu-icon,
+.menu-item.active .menu-icon {
+    background-color: #2c3e50;
+}
+
+.menu-icon {
+    width: 1.5rem; /* Use relative unit for width */
+    height: 1.5rem; /* Use relative unit for height */
+    position: absolute;
+    left: 0.625rem; /* Use relative unit for left positioning */
+    margin-right: 0.625rem; /* Use relative unit for margin */
+    background-color: #2F4F41;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.footer {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 1.25rem; /* Use relative unit for padding */
+}
+
+.footer p {
+    margin: 0.3125rem 0; /* Use relative unit for margin */
+}

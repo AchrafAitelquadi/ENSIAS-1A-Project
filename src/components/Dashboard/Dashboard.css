@@ -1,0 +1,308 @@
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #F5F5F5;
+    align-items: center;
+    width: calc(100% - 210px);
+    position: absolute;
+    left: 208px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    height: 100vh;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Space between title and search bar */
+    width: 100%; /* Full width */
+    margin-bottom: 2rem; /* Space below the header */
+    padding : 0 1rem;   
+
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4C4541; /* Title color */
+    margin: 0; /* Remove margin */
+    margin-left : 4rem;
+    text-align: left; /* Left-align the title */
+}
+
+.search-bar {
+    flex-shrink: 0; /* Prevent the search bar from shrinking */
+    max-width : 300px;
+    width : 100%;
+    margin-left : 432px;
+    flex-grow : 1;
+}
+
+
+.search-bar {
+    width: 100px; /* Adjust width as needed */
+    padding : 0.5rem;
+    border-radius: 20px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for some depth */
+    overflow: hidden;
+}
+
+.search-bar input:focus {
+    outline: none; /* Remove default outline */
+    border-color: #4CAF50; /* Change border color on focus */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for focus */
+}
+
+
+
+.stats-cards {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0 0.5rem;
+    flex: 1;
+    max-width: 200px; /* Fixed width */
+}
+
+.card-section {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 8px; /* Space between the text and number */
+}
+
+.card-section div {
+    display: flex;
+    flex-direction: column; /* Align text and number vertically */
+    align-items: center; /* Center text and number horizontally */
+}
+
+.card-icon {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Ensure the height matches the width for a perfect circle */
+    border-radius: 50%; /* Makes the element circular */
+    background-color: #296D50; /* Green background color */
+    border: 3px solid white; /* White border to make the circle stand out */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    overflow: hidden; /* Ensures the image does not overflow the circular shape */
+}
+
+.card-icon img {
+    width: 100%; /* Ensures the image covers the circle */
+    height: 100%; /* Ensures the image covers the circle */
+    object-fit: cover; /* Ensures the image is properly contained */
+}
+
+.card-icon-services {
+    background-color: #FB7D5B; /* Orange background color for services */
+}
+
+.card h3 {
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem; /* Space between candidature card and buttons */
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button.creer-avis {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+}
+
+.button.creer-avis:hover {
+    background-color: #45A049; /* Darker green on hover */
+}
+
+.button.creer-epreuve {
+    background-color: white;
+    color: #4CAF50; /* Green text */
+    border: 2px solid #4CAF50; /* Green border */
+}
+
+.button.creer-epreuve:hover {
+    background-color: #F1F1F1; /* Light grey on hover */
+}
+
+.combined-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    text-align: center;
+    margin-right: 0.5rem;
+    flex: 1;
+    max-width: 450px; /* Increase the max-width */
+}
+
+.candidature-card {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0.5rem;
+    flex: 1;
+    max-width: 200px;
+}
+
+.chart {
+    width: 100%;
+    height: auto;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: flex-start; /* Distribute space between items */
+    gap: 1rem; /* Space between the two boxes */
+    margin: 1rem 0; /* Adjust vertical spacing */
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your layout */
+}
+
+.candidature-chart-container{
+    background-color: white;
+    padding: 0.75rem; /* Reduced padding */
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 882px; /* Reduced max-width */
+    margin: 1rem 0; /* Vertical margin */
+    margin-left: -283px;
+}
+
+.besoins-chart-container, .calendrier-container {
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  
+    width: 45%;
+    max-width: 425px; /* Adjust as needed */
+    margin: 0;
+}
+
+.besoins-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendrier-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-chart-container {
+    background-color: white;
+    padding: 0.1rem 0.2rem 0.2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px; /* Adjust the max-width to make it smaller */
+    height : 350px;
+    margin: 1rem 0; /* Vertical margin */
+    margin-left : -55rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donut-chart-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 0.5rem;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.25rem;
+}
+
+.legend-value {
+    font-weight: bold;
+    margin-left: 0.25rem;
+}
+
+.bar-chart-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.bar-chart-container h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.chart-title {
+    color : #303972;
+    font-size : 24px;
+    font-weight : bold;
+}
+
