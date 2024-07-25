@@ -16,7 +16,6 @@ def extract_files(hrefs,dir_path,driver):
         dirs.pop(1)
         dirs[0]="https"
         file_path = dir_path+"\\"+os.path.join(*dirs)
-        print("file path = ",file_path)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         driver.get(href)
         displayed_content = driver.find_element(By.TAG_NAME,'body').text
