@@ -12,18 +12,16 @@ def url_dict():
     time.sleep(5)
     not_products=["All Living Sale","Seating Collections","All Dining Sale","All Dining Tables","All Dining Seating","All Bed Sale","Bedroom Collections","All Bath Sale","Bath Collections","All Outdoor Sale","Furniture Collections","All Lighting Sale","All Textiles Sale","Bedding Collections","All Rugs Sale","All Decor Sale","Drapery Collections"]
     my_dict={}
-    ##click sur sale pour afficher menu
     sale=driver.find_element(By.XPATH,"/html/body/div[3]/div/main/div/div[1]/div/div/div[1]/div[2]/div[1]/div[2]/div[1]/header/div[1]/div/div[2]/ul/li[12]")
     sale.click()
     time.sleep(1)
     for i in range(1,10):
         products_dict={}
-        ##click sur living,dining,...
         categorie=driver.find_element(By.XPATH,"/html/body/div[3]/div/main/div/div[1]/div/div/div[1]/div[2]/div[1]/div[2]/div[1]/header/div[1]/div/div[2]/ul/div[12]/div/div/div/div/div[1]/ul/li["+str(i)+"]/span")
         categorie.click()
         categorie_name=categorie.text
         j=1
-        while True:  ##2eme menu
+        while True:
             try:
                 product=driver.find_element(By.XPATH,"/html/body/div[3]/div/main/div/div[1]/div/div/div[1]/div[2]/div[1]/div[2]/div[1]/header/div[1]/div/div[2]/ul/div[12]/div/div/div/div/div[2]/ul/a["+str(j)+"]")        
             except:
@@ -35,16 +33,12 @@ def url_dict():
             j=j+1
             if product_name in not_products:
                 continue
-    ##        #on ne peut pas Vérifier si la clé et la valeur existent déjà ensemble =>   !! on ne peut pas lafaire car url de meme produit contient parentCatId different
             found = any(inner_dict.get(product_name) for inner_dict in my_dict.values())
             if found:
                 continue   
             current_url=product.get_attribute('href')
             products_dict[product_name] = current_url
         my_dict[categorie_name]=products_dict
-    # Fermer le navigateur
     driver.quit()
     return my_dict
-
-
 
